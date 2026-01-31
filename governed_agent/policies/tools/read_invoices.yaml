@@ -1,0 +1,14 @@
+tool: read_invoices
+summary: Read invoice records for a specific date.
+inputs:
+  - name: date
+    type: string
+    required: true
+    description: Invoice date in YYYY-MM-DD format.
+scopes:
+  read:
+    - invoices
+  write: []
+guardrails:
+  - max_rows: 50
+approvals: []

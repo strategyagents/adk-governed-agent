@@ -1,0 +1,26 @@
+tool: send_vendor_email
+summary: Send an email to a vendor regarding invoices.
+inputs:
+  - name: vendor_id
+    type: string
+    required: true
+    description: Vendor identifier.
+  - name: subject
+    type: string
+    required: true
+    description: Email subject line.
+  - name: body
+    type: string
+    required: true
+    description: Email message body.
+scopes:
+  read: []
+  write:
+    - vendor_email
+guardrails:
+  - block_keywords:
+      - gift card
+      - gift cards
+  - max_recipients: 1
+approvals:
+  - "contains(body, 'wire') OR contains(body, 'ACH')"
