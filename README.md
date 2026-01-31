@@ -1,4 +1,4 @@
-# adk-boundary-first-agent
+# adk-governed-agent
 
 Google ADK sample that demonstrates boundary-first agent design with policy-as-code
 tool permissions, guardrails, and approvals. Deny-by-default is enforced when a
